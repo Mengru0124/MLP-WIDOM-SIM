@@ -38,14 +38,15 @@ Efficient Widom insertion simulations for porous materials (e.g., MOFs/COFs) usi
 Create and activate an environment (recommended):
 
 ```bash
-python -m venv .venv
-source .venv/bin/activate   # Windows: .venv\Scripts\activate
+conda create -n mlip python=3.11 -y
+python -m pip install --upgrade pip
+python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
 ```
 
 Install requirements:
 
 ```bash
-pip install -r requirements.txt
+python -m pip install -r requirements.txt
 ```
 
 **Example `requirements.txt`** (adjust versions as needed):
@@ -54,8 +55,8 @@ ase
 numpy
 scipy
 molmod
-pfp_api_client
-matlantis_features
+mace-torch
+
 ```
 
 If you plan to use GPU acceleration with Matlantis/PFP, follow the vendor’s instructions for CUDA/toolkit compatibility.
